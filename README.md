@@ -15,7 +15,7 @@ do nauki UX i dostępności cyfrowej.
 
 | Plik | Opis |
 |---|---|
-| `omowienie.html` | Strona główna z pełną analizą porównawczą |
+| `index.html` | Strona główna z pełną analizą porównawczą |
 | `dostepna.html` | Formularz wypożyczenia książki — dobre praktyki UX |
 | `niedostepna.html` | Sklep internetowy — celowo złamane zasady dostępności |
 
