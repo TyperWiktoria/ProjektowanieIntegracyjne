@@ -5,13 +5,13 @@ jedną zgodną z zasadami projektowania przyjaznego osobom w spektrum autyzmu,
 drugą celowo łamiącą te zasady. Powstał jako materiał dydaktyczny
 do nauki UX i dostępności cyfrowej.
 
-## 🔗 Linki
+##  Linki 
 
-- [Strona główna z omówieniem](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/04e54929eea5a924ebf6a05c71257077c7554d4e/dostepna.html)
-- [✅ Strona dostępna — Biblioteka Miejska](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/c9a65285214438f6720c2e794dce317b4161e504/niedostepna.html)
-- [❌ Strona niedostępna — MegaSklep](https://TWOJA-NAZWA.github.io/autyzm-dostepnosc/niedostepna.html)
+- [Strona główna z omówieniem](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/fb84f7635bdb658a7337b7b222b548a18a57ab1e/omowienie.html)
+- [ Strona dostępna — Biblioteka Miejska](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/04e54929eea5a924ebf6a05c71257077c7554d4e/dostepna.html)
+- [ Strona niedostępna — MegaSklep](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/c9a65285214438f6720c2e794dce317b4161e504/niedostepna.html)
 
-## 📁 Zawartość repozytorium
+##  Zawartość repozytorium
 
 | Plik | Opis |
 |---|---|
@@ -19,7 +19,7 @@ do nauki UX i dostępności cyfrowej.
 | `dostepna.html` | Formularz wypożyczenia książki — dobre praktyki UX |
 | `niedostepna.html` | Sklep internetowy — celowo złamane zasady dostępności |
 
-## ✅ Zasady zastosowane na stronie dostępnej
+##  Zasady zastosowane na stronie dostępnej
 
 - Spokojne kolory — paleta kremowo-szałwiowa, tło off-white `#f5f2eb`
 - Font **Atkinson Hyperlegible** (zaprojektowany przez Braille Institute) 17px, interlinia 1.65
