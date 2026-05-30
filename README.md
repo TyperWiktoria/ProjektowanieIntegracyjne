@@ -8,7 +8,7 @@ do nauki UX i dostępności cyfrowej.
 ## 🔗 Linki
 
 - [Strona główna z omówieniem](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/04e54929eea5a924ebf6a05c71257077c7554d4e/dostepna.html)
-- [✅ Strona dostępna — Biblioteka Miejska](https://TWOJA-NAZWA.github.io/autyzm-dostepnosc/dostepna.html)
+- [✅ Strona dostępna — Biblioteka Miejska](https://github.com/TyperWiktoria/ProjektowanieIntegracyjne/blob/c9a65285214438f6720c2e794dce317b4161e504/niedostepna.html)
 - [❌ Strona niedostępna — MegaSklep](https://TWOJA-NAZWA.github.io/autyzm-dostepnosc/niedostepna.html)
 
 ## 📁 Zawartość repozytorium
