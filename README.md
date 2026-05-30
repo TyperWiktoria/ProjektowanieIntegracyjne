@@ -46,6 +46,17 @@ do nauki UX i dostępności cyfrowej.
 - `outline: none !important` — całkowity brak fokusa klawiatury
 - Chaotyczna hierarchia nagłówków bez logicznej struktury
 
+- ##  Dlaczego to ważne
+
+Wiele osób w spektrum autyzmu przetwarza wszystkie bodźce jednocześnie,
+bez automatycznej filtracji tła. To, co dla typowego użytkownika jest
+nieistotnym elementem interfejsu, dla osoby w spektrum może wymagać
+aktywnego przetwarzania — wyczerpując zasoby poznawcze potrzebne
+do wykonania głównego zadania.
+
+Zasady przyjazne osobom w spektrum to jednocześnie **po prostu dobry UX**
+dla wszystkich użytkowników.
+
 ## Zasoby
 
 - [WCAG 2.1 — Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/)
@@ -53,3 +64,7 @@ do nauki UX i dostępności cyfrowej.
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [A11y Project Checklist](https://www.a11yproject.com/checklist/)
 - [prefers-reduced-motion — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+
+- > Strona `niedostepna.html` zawiera migające animacje, głośne dźwięki
+> i agresywne kolory. Służy wyłącznie celom edukacyjnym.
+> Osoby wrażliwe na bodźce wizualne i dźwiękowe powinny zachować ostrożność.
