@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MEGA SKLEP ONLINE - KUPUJ TERAZ!!!</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&display=swap" rel="stylesheet">
+<style>
+/* UWAGA: Ta strona celowo łamie zasady dostępności w celach edukacyjnych */
+
+* { margin:0; padding:0; }
+
+body {
+  background: #ff00ff;
+  font-family: 'Lobster', cursive;
+  overflow-x: hidden;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">💥</text></svg>'), auto;
+}
+
+/* ── Migający nagłówek (może wywołać napady u osób z epilepsją) ── */
+header {
+  animation: flashHeader 0.3s infinite;
+  padding: 10px;
+  text-align: center;
+}
+@keyframes flashHeader {
+  0%   { background: #ff0000; color: #00ff00; }
+  25%  { background: #00ff00; color: #0000ff; }
+  50%  { background: #0000ff; color: #ffff00; }
+  75%  { background: #ffff00; color: #ff00ff; }
+  100% { background: #ff00ff; color: #ff0000; }
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  text-shadow: 5px 5px 0 #000, -3px -3px 0 #fff;
+  animation: spin 2s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  from { transform: rotate(-3deg) scale(1); }
+  to   { transform: rotate(3deg) scale(1.05); }
+}
+
+/* ── Chaos nawigacji ── */
+nav {
+  background: #00ff00;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 5px;
+  justify-content: center;
+  border: 8px dashed #ff00ff;
+}
+nav a {
+  color: #0000ff;
+  text-decoration: none;
+  font-size: 0.6rem;
+  background: #ffff00;
+  padding: 2px 4px;
+  border: 3px solid #ff0000;
+  margin: 2px;
+  transform: rotate(var(--r));
+  display: inline-block;
+}
+nav a:nth-child(1) { --r: -5deg; font-size: 1.8rem; color: #ff0000; }
+nav a:nth-child(2) { --r: 8deg; font-size: 0.5rem; }
+nav a:nth-child(3) { --r: -12deg; font-size: 2.5rem; background: #ff6600; }
+nav a:nth-child(4) { --r: 3deg; font-size: 0.4rem; color: #330000; background: #ff0000; }
+nav a:nth-child(5) { --r: -7deg; font-size: 1rem; }
+nav a:nth-child(6) { --r: 15deg; font-size: 0.3rem; background: #ff00ff; color: #ffff00; }
+nav a:hover { opacity: 0.5; }
+
+/* ── Chaotyczny layout główny ── */
+.chaos-grid {
+  display: grid;
+  grid-template-columns: 80px 1fr 40px 2fr 15px;
+  grid-template-rows: auto auto auto auto;
+  gap: 0;
+}
+
+/* ── Rozpraszający baner reklamowy ── */
+.ad-banner {
+  background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00, #00ff00, #0000ff, #ff00ff);
+  background-size: 400% 400%;
+  animation: gradientShift 0.5s ease infinite, blink 0.2s step-start infinite;
+  padding: 8px;
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 2.5rem;
+  color: #000;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
+  letter-spacing: -2px;
+  border: 10px ridge #ff00ff;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+/* ── Boczny panel migający ── */
+.sidebar-left {
+  grid-column: 1;
+  background: #ff6600;
+  padding: 5px;
+  border: 5px dotted #0000ff;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sidebar-left .widget {
+  background: #00ffff;
+  border: 3px solid #ff0000;
+  padding: 3px;
+  margin-bottom: 2px;
+  font-size: 0.45rem;
+  color: #000033;
+  word-break: break-all;
+  overflow: hidden;
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+@keyframes wiggle {
+  0%,100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+/* ── Główna treść ── */
+.main-content {
+  grid-column: 2;
+  padding: 5px;
+  background: #ffffcc;
+  position: relative;
+}
+
+/* Migający nagłówek produktu */
+.product-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  color: #ff0000;
+  text-shadow: 4px 4px 0 #0000ff;
+  animation: titlePulse 0.4s alternate infinite;
+  letter-spacing: -4px;
+  word-break: break-all;
+}
+@keyframes titlePulse {
+  from { transform: scale(0.95); color: #ff0000; }
+  to   { transform: scale(1.05); color: #0000ff; }
+}
+
+/* Nieczytelna cena */
+.price {
+  font-size: 0.9rem;
+  color: #cccccc; /* prawie niewidoczna na żółtym tle */
+  font-family: monospace;
+  transform: skewX(-20deg) skewY(5deg);
+  display: inline-block;
+  background: #ddddcc;
+  letter-spacing: 8px;
+}
+
+/* Pop-up który pojawia się losowo */
+.popup {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  width: 92%;
+  background: linear-gradient(#ff0000, #ff6600);
+  border: 15px double #0000ff;
+  padding: 10px;
+  z-index: 9999;
+  text-align: center;
+  animation: popupShake 0.2s infinite;
+}
+@keyframes popupShake {
+  0%,100% { transform: translate(0,0); }
+  25%      { transform: translate(-5px, 5px); }
+  75%      { transform: translate(5px, -5px); }
+}
+.popup h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #ffff00;
+  text-shadow: 3px 3px #000;
+  animation: flashText 0.15s step-start infinite;
+}
+@keyframes flashText {
+  0%   { color: #ffff00; }
+  50%  { color: #ffffff; }
+}
+.popup-close {
+  font-size: 0.4rem; /* prawie niewidoczny przycisk zamknięcia */
+  color: #ff6600; /* niewidoczny na czerwonym tle */
+  background: #ff4400;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  padding: 1px;
+}
+
+/* ── Formularz (celowo zły) ── */
+.bad-form {
+  background: #cc00cc;
+  padding: 8px;
+  margin-top: 5px;
+  border: 7px groove #00cc00;
+}
+.bad-form label {
+  font-size: 0.5rem;
+  color: #cc00cc; /* niewidoczny na fioletowym tle */
+  display: none; /* ukryte etykiety! */
+}
+.bad-form input {
+  background: #333333;
+  color: #222222; /* ciemny tekst na ciemnym tle */
+  border: 1px solid #444444;
+  font-size: 0.7rem;
+  width: 30%;
+  font-family: 'Pacifico', cursive;
+  padding: 2px;
+  margin: 1px;
+  display: inline-block;
+}
+.bad-form input::placeholder {
+  color: #555555; /* niemal niewidoczny */
+  font-size: 0.5rem;
+}
+.bad-form .submit-maze {
+  /* Przycisk "Kup teraz" jest ukryty za innymi elementami */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+.bad-form button {
+  font-size: 0.45rem;
+  background: #ffffcc; /* jasny na jasnym tle */
+  color: #eeeeaa;
+  border: 1px dashed #cccc99;
+  padding: 2px;
+  font-family: monospace;
+  cursor: pointer;
+  margin: 1px;
+}
+/* Prawdziwy przycisk jest ukryty w chaosie innych przycisków *)
+.bad-form .real-btn {
+  background: #ff0000;
+  color: #ff6600; /* słaby kontrast */
+  font-size: 0.6rem;
+  animation: jumpAround 1s ease-in-out infinite;
+  position: relative;
+}
+@keyframes jumpAround {
+  0%,100% { left: 0; }
+  25%  { left: 50px; }
+  50%  { left: -30px; }
+  75%  { left: 80px; }
+}
+
+/* ── Chaotyczny sidebar ── */
+.sidebar-right {
+  grid-column: 4;
+  background: #00cc00;
+  font-size: 0.55rem;
+  color: #004400;
+  padding: 4px;
+  overflow: hidden;
+}
+.sidebar-right p {
+  word-break: break-all;
+  hyphens: none;
+  text-align: justify;
+  line-height: 0.9;
+  transform: perspective(300px) rotateY(10deg);
+  margin-bottom: 2px;
+}
+
+/* ── Stopka (ukryte ważne linki) ── */
+footer {
+  background: #000000;
+  color: #0a0a0a; /* tekst prawie niewidoczny */
+  padding: 3px;
+  font-size: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+footer a {
+  color: #111111; /* niewidoczne linki */
+  text-decoration: none;
+  font-family: monospace;
+}
+
+/* ── Chaotyczne "produkty" ── */
+.products-area {
+  grid-column: 2 / 5;
+  padding: 5px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff00ff,
+    #ff00ff 5px,
+    #00ff00 5px,
+    #00ff00 10px
+  );
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.product-card {
+  background: rgba(255,255,0,0.9);
+  border: 3px solid #ff0000;
+  padding: 3px;
+  font-size: 0.5rem;
+  transform: rotate(calc(var(--idx) * 5deg - 15deg));
+  animation: cardBounce 0.5s ease-in-out infinite alternate;
+}
+.product-card:nth-child(1)  { --idx:1; }
+.product-card:nth-child(2)  { --idx:2; }
+.product-card:nth-child(3)  { --idx:3; }
+.product-card:nth-child(4)  { --idx:4; }
+.product-card:nth-child(5)  { --idx:5; }
+.product-card:nth-child(6)  { --idx:6; }
+.product-card:nth-child(7)  { --idx:7; }
+@keyframes cardBounce {
+  from { transform: rotate(calc(var(--idx) * 5deg - 15deg)) translateY(0); }
+  to   { transform: rotate(calc(var(--idx) * 5deg - 15deg)) translateY(-8px); }
+}
+.product-card h4 { font-size: 0.45rem; color: #000033; word-break: break-all; }
+.product-card .prc { color: #cc9900; background: #ffff00; font-size: 0.4rem; }
+
+/* Tekst biały na białym tle */
+.hidden-text { color: #ffffff; background: #ffffff; font-size: 0.8rem; }
+
+/* ── Obowiązkowy timer ── */
+.countdown {
+  background: #ff0000;
+  color: #ff6600;
+  font-size: 4rem;
+  text-align: center;
+  animation: countdownPulse 0.5s step-start infinite;
+  font-family: 'Pacifico', cursive;
+  grid-column: 1/-1;
+}
+@keyframes countdownPulse {
+  0%  { background:#ff0000; color:#ff6600; }
+  50% { background:#ff6600; color:#ff0000; }
+}
+
+/* Pasek "przewijającego się" tekstu */
+.marquee-bar {
+  grid-column: 1/-1;
+  background: #0000ff;
+  color: #ffff00;
+  font-size: 1.5rem;
+  padding: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-inner {
+  display: inline-block;
+  animation: marqueeScroll 3s linear infinite;
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Nadmiarowy content wszędzie */
+.overflow-text {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+}
+.overflow-text span {
+  position: fixed;
+  font-size: 0.7rem;
+  color: rgba(255,0,255,0.4);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* brak focus outline na wszystkich elementach */
+* { outline: none !important; }
+
+/* ── TIMER: liczy w dół i zmusza do działania ── */
+.time-pressure {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: monospace;
+  animation: timerFlash 0.5s step-start infinite;
+  grid-column: 1/-1;
+}
+@keyframes timerFlash {
+  50% { background: #000000; }
+}
+</style>
+</head>
+<body>
+
+<!-- POP-UP który pojawia się od razu i blokuje treść -->
+<div class="popup" id="mainPopup" role="dialog" aria-hidden="true">
+  <h2>🎉 ZOSTAŁEŚ WYBRANY!!! 🎉</h2>
+  <p style="color:#ffff00;font-size:1.5rem;font-family:monospace;">KLIKNIJ TERAZ!!! OFERTA WYGASA ZA 3 SEKUNDY!!!!</p>
+  <p style="color:#00ff00;font-size:0.7rem;font-family:'Lobster';">♦♦♦ TAK NAPRAWDĘ NIE WYGASA ALE KLIKNIJ TERAZ ♦♦♦</p>
+  <!-- Przycisk zamknięcia jest prawie niewidoczny i mały -->
+  <button class="popup-close" onclick="document.getElementById('mainPopup').style.display='none'" tabindex="-1">x</button>
+</div>
+
+<!-- Nagłówek migający -->
+<header>
+  <h1>🛒 MEGA SKLEP!!! 🛒</h1>
+  <p style="color:#00ffff;font-size:3rem;animation:blink 0.1s step-start infinite;">NAJLEPSZA OFERTA W HISTORII INTERNETU!!!</p>
+</header>
+
+<!-- Chaotyczna nawigacja bez logicznej kolejności -->
+<nav aria-label="menu">
+  <a href="#">DOM</a>
+  <a href="#">o</a>
+  <a href="#">PRODUKTYYY!!!</a>
+  <a href="#">x</a>
+  <a href="#">Coś</a>
+  <a href="#">???</a>
+</nav>
+
+<!-- Przewijający się tekst (nie da się go zatrzymać) -->
+<div class="marquee-bar" aria-hidden="true">
+  <span class="marquee-inner">
+    ★ KLIKNIJ TUTAJ ★ SPECJALNA OFERTA ★ TYLKO DZISIAJ ★ NIE PRZEGAP ★ OGROMNE ZNIŻKI ★ OSTATNIA SZANSA ★ KLIKNIJ TERAZ ★ FANTASTYCZNE PRODUKTY ★ KUP WSZYSTKO ★ PROMOCJA ★
+  </span>
+</div>
+
+<!-- Timer presji (odlicza losowo, nigdy nie dobiega końca) -->
+<div class="time-pressure" aria-live="assertive" id="pressure-timer">
+  ⚠ OFERTA WYGASA ZA: <span id="countdown">99:99</span> — KLIKNIJ TERAZ LUB STRAĆ OKAZJĘ NA ZAWSZE!!!
+</div>
+
+<div class="chaos-grid">
+
+  <!-- Lewy sidebar — chaotyczne widżety -->
+  <aside class="sidebar-left" aria-label="reklamy">
+    <div class="widget">KLIKNIJ! KLIKNIJ! KLIKNIJ! Specjalna oferta tylko dla Ciebie!</div>
+    <div class="widget">WYGRAŁEŚ NAGRODĘ kliknij aby odebrać kliknij teraz nie zwlekaj</div>
+    <div class="widget">hot deal zniżka 99% tylko teraz teraz teraz</div>
+    <div class="widget">PILNE WAŻNE WAŻNE WAŻNE</div>
+    <div class="widget">§§§ PROMOCJA §§§</div>
+  </aside>
+
+  <!-- Główna treść -->
+  <main class="main-content" id="main">
+
+    <!-- Brak ARIA landmarks, brak skip link, brak struktury -->
+    <div class="product-title">MEGA PRODUKTTTT!!!</div>
+
+    <p style="font-size:0.5rem;color:#9999aa;font-family:monospace;letter-spacing:5px;">
+      Opis produktu: ten produkt jest bardzo dobry i warto go kupić ponieważ jest on niesamowity i wyjątkowy
+      oraz posiada wiele unikalnych cech których nie znajdziesz nigdzie indziej na całym świecie i w internecie
+    </p>
+
+    <!-- Cena prawie niewidoczna -->
+    <div>
+      <span style="font-size:0.4rem;color:#aaaaaa;">Cena: </span>
+      <span class="price">999,99 zł</span>
+    </div>
+
+    <!-- "Formularz" zakupu — bez etykiet, bez dostępności -->
+    <div class="bad-form" aria-hidden="true">
+      <p style="color:#ffff00;font-size:0.7rem;">WYPEŁNIJ FORMULARZ ABY KUPIĆ (jeśli znajdziesz pola):</p>
+      <!-- Etykiety są ukryte via display:none -->
+      <label for="f1">Imię</label>
+      <input type="text" id="f1" placeholder="???">
+      <label for="f2">Email</label>
+      <input type="email" id="f2" placeholder="@@@">
+      <label for="f3">Karta</label>
+      <input type="text" id="f3" placeholder="####">
+
+      <!-- Komunikat błędu bez informacji co zrobić -->
+      <p style="color:#ff00ff;font-size:0.5rem;">BŁĄD BŁĄD BŁĄD coś poszło nie tak</p>
+
+      <!-- Labirynt przycisków — prawdziwy jest ukryty -->
+      <div class="submit-maze">
+        <button style="font-size:0.3rem;background:#ffffee;color:#eeeedd;">Anuluj</button>
+        <button style="font-size:0.3rem;background:#ffeeee;color:#eedddd;">Cofnij</button>
+        <button style="font-size:0.3rem;background:#eeffee;color:#ddeecc;">Reset</button>
+        <button style="font-size:0.3rem;background:#eeeeff;color:#ddddee;">?</button>
+        <button class="real-btn">KUP</button>
+        <button style="font-size:0.3rem;background:#fff0ff;color:#eeddee;">Anuluj 2</button>
+        <button style="font-size:0.3rem;background:#f0fff0;color:#ddeedd;">Nie</button>
+      </div>
+    </div>
+
+    <!-- Tekst niewidoczny (biały na białym) -->
+    <div class="hidden-text">Ważne informacje o zwrotach i warunkach sprzedaży są tutaj schowane</div>
+
+    <!-- Brak spójności: różne style nagłówków bez logiki -->
+    <h4 style="font-size:3rem;color:#ff00ff;font-family:'Pacifico';">Opis</h4>
+    <h2 style="font-size:0.5rem;color:#aaaaaa;font-family:monospace;">SZCZEGÓŁOWE INFORMACJE TECHNICZNE</h2>
+    <h1 style="font-size:0.8rem;color:#888888;">uwagi</h1>
+
+  </main>
+
+  <!-- Środkowy wąski "separator" -->
+  <div style="grid-column:3;background:repeating-linear-gradient(0deg,#ff0000,#ff0000 2px,#0000ff 2px,#0000ff 4px);"></div>
+
+  <!-- Prawy sidebar -->
+  <aside class="sidebar-right">
+    <p>Powiązaneproduktymegaofertakupterazoszczędzajdużozarabiajwięcejniestracajczasuofertawygasaogromnaobniżkacenywyjątkowaoferta</p>
+    <p>INNEPRODUKTYKTÓREWARTOKUPIĆRAZEMPOŁĄCZENIEOFERTSPECJALNAZNIŻKABUNDLEPACKAGESET</p>
+    <p>najlepszyproduktnaświecieocena5gwiazdekrecenzjepositivebardzolepszeniżkonkurencja</p>
+  </aside>
+
+</div>
+
+<!-- Chaotyczna siatka produktów — rotowane, skaczące karty -->
+<div class="products-area" role="list">
+  <div class="product-card" role="listitem">
+    <h4>ProduktNr1SuperUltraMegaSpecjalny</h4>
+    <div class="prc">???.?? zł</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>INNYPRODUKTZNIZKASUPEROKAZJA</h4>
+    <div class="prc">###</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>Coś do kupienia natychmiast</h4>
+    <div class="prc">TANIO!</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>??????????????????</h4>
+    <div class="prc">0 zł*</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>SuperOferta2025KUPNOW</h4>
+    <div class="prc">¿¿¿</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>Produkt6</h4>
+    <div class="prc">zł</div>
+  </div>
+  <div class="product-card" role="listitem">
+    <h4>!!!</h4>
+    <div class="prc">!</div>
+  </div>
+</div>
+
+<!-- Baner reklamowy -->
+<div class="ad-banner" aria-hidden="true">
+  🔥💥🎉 KLIKNIJ TERAZ — OFERTA OGRANICZONA CZASOWO — NIE PRZEGAP — 99% ZNIŻKI 💥🔥🎉
+</div>
+
+<!-- Odliczanie — migający i krzyczący timer -->
+<div class="countdown" aria-live="assertive">
+  ⏰ <span id="bigTimer">00:07</span> ⏰
+</div>
+
+<!-- Stopka z prawie niewidocznym tekstem -->
+<footer>
+  <a href="#">Regulamin</a>
+  <a href="#">Polityka prywatności</a>
+  <a href="#">Kontakt</a>
+  <a href="#">Dostępność</a>
+  <span>© 2025 MegaSklep</span>
+  <a href="#">Zwroty</a>
+  <a href="#">Pomoc</a>
+</footer>
+
+<!-- Elementy "pływające" — ciągły ruch na ekranie -->
+<div class="overflow-text" aria-hidden="true">
+  <span style="top:20%;left:10%;">KLIKNIJ!</span>
+  <span style="top:40%;left:70%;animation-delay:.5s;">PROMOCJA!</span>
+  <span style="top:70%;left:30%;animation-delay:1s;">KUPUJ!</span>
+  <span style="top:60%;left:85%;animation-delay:1.5s;">OKAZJA!</span>
+  <span style="top:30%;left:50%;animation-delay:.8s;">TERAZ!</span>
+</div>
+
+<script>
+// Dźwięk autoplay przy wejściu na stronę (zły wzorzec)
+try {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  function playBeep() {
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.frequency.value = 880;
+    g.gain.setValueAtTime(0.3, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + 0.3);
+  }
+  // Uruchamiamy dźwięk co 4 sekundy bez zgody użytkownika
+  setTimeout(playBeep, 500);
+  setInterval(playBeep, 4000);
+} catch(e) {}
+
+// Timer który NIGDY nie dobiega końca — zawsze resetuje się
+let seconds = 7;
+function updateTimer() {
+  document.getElementById('bigTimer').textContent =
+    '00:' + String(seconds).padStart(2, '0');
+  document.getElementById('countdown').textContent =
+    String(Math.floor(Math.random() * 59 + 1)).padStart(2,'0') + ':' +
+    String(Math.floor(Math.random() * 59)).padStart(2,'0');
+  seconds--;
+  if (seconds < 0) seconds = 7; // resetuje się w kółko
+}
+setInterval(updateTimer, 800);
+
+// Popup pojawia się ponownie co 8 sekund
+setInterval(function() {
+  document.getElementById('mainPopup').style.display = 'block';
+}, 8000);
+
+// Strona automatycznie przewija się (bez zgody użytkownika)
+let scrollDir = 1;
+setInterval(function() {
+  window.scrollBy(0, scrollDir * 1);
+  if (window.scrollY > 200 || window.scrollY === 0) scrollDir *= -1;
+}, 50);
+</script>
+</body>
+</html>
